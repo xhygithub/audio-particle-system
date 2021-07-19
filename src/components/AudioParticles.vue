@@ -114,7 +114,7 @@ export default {
 
       let points = new THREE.Points(this.geometry, material);
       this.scene.add(points);
-      this.renderer.setSize(window.innerWidth + window.innerWidth * 0.2, this.canvasHeight);
+      this.renderer.setSize(window.innerWidth, this.canvasHeight);
       this.renderer.setClearColor(0x000000, 1);
       const container = this.$refs.canvasContainer;
       container && container.appendChild(this.renderer.domElement);
@@ -153,7 +153,7 @@ export default {
       this.camera.aspect = this.aspect; //(window.innerWidth + window.innerWidth * 0.2) / this.canvasHeight;
       this.camera.fov = this.fov;
       this.camera.updateProjectionMatrix();
-      this.renderer.setSize(window.innerWidth + window.innerWidth * 0.2, this.canvasHeight);
+      this.renderer.setSize(window.innerWidth, this.canvasHeight);
     },
 
     animation: function (arr) {
