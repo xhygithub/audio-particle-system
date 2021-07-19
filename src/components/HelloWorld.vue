@@ -27,14 +27,27 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <AudioParticles ref="audioParticle"></AudioParticles>
+    <button v-on:click="audioPlay">Play Audio</button>
+    <button v-on:click="audioStop">Stop Audio</button>
   </div>
 </template>
 
 <script>
+import AudioParticles from "@/components/AudioParticles";
 export default {
   name: 'HelloWorld',
+  components: {AudioParticles},
   props: {
     msg: String
+  },
+  methods: {
+    audioPlay: function () {
+      this.$refs.audioParticle.audioPlay();
+    },
+    audioStop: function () {
+      this.$refs.audioParticle.audioStop();
+    }
   }
 }
 </script>
